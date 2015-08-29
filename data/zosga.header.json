@@ -1,0 +1,89 @@
+{
+    "dimensions": {
+        "time": "UNLIMITED ; // (1152 currently)",
+        "bnds": 2
+    },
+    "variables": {
+        "time": {
+            "type": "double",
+            "dimensions": [
+                "time"
+            ],
+            "attributes": {
+                "bounds": "time_bnds",
+                "units": "days since 0000-01-01 00:00:00",
+                "calendar": "noleap",
+                "axis": "T",
+                "long_name": "time",
+                "standard_name": "time"
+            }
+        },
+        "time_bnds": {
+            "type": "double",
+            "dimensions": [
+                "time",
+                "bnds"
+            ],
+            "attributes": {
+                
+            }
+        },
+        "zosga": {
+            "type": "float",
+            "dimensions": [
+                "time"
+            ],
+            "attributes": {
+                "standard_name": "global_average_sea_level_change",
+                "long_name": "Global Average Sea Level Change",
+                "units": "m",
+                "original_name": "ave_slc",
+                "comment": "ave_slc from Aixues SLC code; derived from SSH PD TEMP SALT",
+                "original_units": "cm",
+                "history": "2012-02-13T18:06:54Z altered by CMOR: Converted units from cm to m. 2012-02-13T18:06:54Z altered by CMOR: replaced missing value flag (-1e+34) with standard missing value (1e+20).",
+                "cell_methods": "time: mean (interval: 30 days) area: mean where sea",
+                "missing_value": 1.000000e+20f,
+                "_FillValue": 1.000000e+20f,
+                "associated_files": "baseURL: http://cmip-pcmdi.llnl.gov/CMIP5/dataLocation gridspecFile: gridspec_ocean_fx_CCSM4_rcp85_r0i0p0.nc"
+            }
+        }
+    },
+    "global_attributes": {
+        "institution": "NCAR (National Center for Atmospheric Research) Boulder, CO, USA",
+        "institute_id": "NCAR",
+        "experiment_id": "rcp85",
+        "source": "CCSM4",
+        "model_id": "CCSM4",
+        "forcing": "Sl GHG SS Ds SA BC MD OC Oz AA",
+        "parent_experiment_id": "historical",
+        "parent_experiment_rip": "r1i1p1",
+        "branch_time": 2005.00000000000,
+        "contact": "cesm_data@ucar.edu",
+        "references": "Gent P. R., et.al. 2011: The Community Climate System Model version 4. J. Climate, doi: 10.1175/2011JCLI4083.1",
+        "initialization_method": 1,
+        "physics_version": 1,
+        "tracking_id": "01646d5b-0097-44a0-bf23-2a84faf2452d",
+        "acknowledgements": "The CESM project is supported by the National Science Foundation and the Office of Science (BER) of the U.S. Department of Energy. NCAR is sponsored by the National Science Foundation. Computing resources were provided by the Climate Simulation Laboratory at the NCAR Computational and Information Systems Laboratory (CISL), sponsored by the National Science Foundation and other agencies.",
+        "cesm_casename": "b40.rcp8_5.1deg.001",
+        "cesm_repotag": "ccsm4_0_beta45",
+        "cesm_compset": "BRCP85CN",
+        "resolution": "f09_g16 (0.9x1.25_gx1v6)",
+        "forcing_note": "Additional information on the external forcings used in this experiment can be found at http://www.cesm.ucar.edu/CMIP5/forcing_information",
+        "processed_by": "strandwg on silver.cgd.ucar.edu at 20120213  -110654.226",
+        "processing_code_information": "Last Changed Rev: 558 Last Changed Date: 2012-02-13 10:14:05 -0700 (Mon, 13 Feb 2012) Repository UUID: d2181dbe-5796-6825-dc7f-cbd98591f93d",
+        "product": "output",
+        "experiment": "RCP8.5",
+        "frequency": "mon",
+        "creation_date": "2012-02-13T18:06:54Z",
+        "history": "Sat Aug 29 11:50:22 2015: ncea r1i1p1/zosga_Omon_CCSM4_rcp85_r1i1p1_200501-210012.nc r2i1p1/zosga_Omon_CCSM4_rcp85_r2i1p1_200501-210012.nc r3i1p1/zosga_Omon_CCSM4_rcp85_r3i1p1_200501-210012.nc r4i1p1/zosga_Omon_CCSM4_rcp85_r4i1p1_200501-210012.nc r5i1p1/zosga_Omon_CCSM4_rcp85_r5i1p1_200501-210012.nc /home/adai/tmp/zosga_Omon_CCSM4_rcp85_6runAvg_200501-210012.nc2012-02-13T18:06:54Z CMOR rewrote data to comply with CF standards and CMIP5 requirements.",
+        "Conventions": "CF-1.4",
+        "project_id": "CMIP5",
+        "table_id": "Table Omon (12 January 2012) 980e0aeb02de4233251f100571014e41",
+        "title": "CCSM4 model output prepared for CMIP5 RCP8.5",
+        "parent_experiment": "historical",
+        "modeling_realm": "ocean",
+        "realization": 1,
+        "cmor_version": "2.7.1",
+        "nco_openmp_thread_number": 1
+    }
+}
