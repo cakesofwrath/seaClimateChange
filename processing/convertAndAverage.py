@@ -34,7 +34,7 @@ if __name__ == "__main__":
     for yr in cZosga:
         zosgaData[yr] = cZosga[yr]["sum"] / cZosga[yr]["ct"]
 
-    pprint.pprint(zosgaData) 
+    pprint.pprint(zosgaData)    
 
     # print len(zosgaRaw["time"]), len(zosgaRaw["zosga"]) # the same
 
