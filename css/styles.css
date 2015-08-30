@@ -52,3 +52,7 @@
 #tableRow {
     min-height: 600px;
 }
+
+#mapInfo {
+    margin-bottom: 40px;
+}
