@@ -27,10 +27,10 @@ class Map extends React.Component {
             id: "cakesofwrath.5eddf8f1",
             accessToken: "pk.eyJ1IjoiY2FrZXNvZndyYXRoIiwiYSI6Ijk5YWI3OTlhMGIxN2I1OWYzYjhlOWJmYjEwNTRjODU0In0._RjYIzLsA5cU-YM6dxGOLQ" 
         });
-        console.log(baseLayer);
+
         baseLayer.addTo(map);
         map.fitBounds(bounds); // maybe redundant?
-        console.log("map");
+
         let myStyle = {
                 "color": "#ff7800",
                 "weight": 5,
@@ -38,19 +38,22 @@ class Map extends React.Component {
         };
         this.setState({
             map: map
-        }, () => console.log("in didmount", this.props, this.state));
+        });
         $.getJSON("../../data/mslTrends.geo.json", (data) => {
-            let rScale = d3.scale.linear()
+            console.log("sorted", data.map((feature) => {
+                    return feature.properties["MSL Trends (mm/yr)"]
+                }).sort());
+            let rScale = d3.scale.quantize()
                 .domain(data.map((feature) => {
                     return feature.properties["MSL Trends (mm/yr)"]
-                }))
-                .range([1, 5]),
+                }).sort())
+                .range([5, 7, 9, 11, 13, 15, 17, 19, 21]),
             cScale = d3.scale.quantile()
                 .domain(data.map((feature) => {
                     return feature.properties["MSL Trends (mm/yr)"]
-                }))
+                }).sort())
                 .range(['rgb(239,243,255)','rgb(198,219,239)','rgb(158,202,225)','rgb(107,174,214)','rgb(66,146,198)','rgb(33,113,181)','rgb(8,69,148)'].reverse());
-
+            console.log(rScale(5))
             L.geoJson(data, {
                 pointToLayer(feature, latlng)  {
                     if(feature.properties["MSL Trends (mm/yr)"] > 0) {
@@ -68,13 +71,12 @@ class Map extends React.Component {
                         name = p["Name"],
                         msl = p["MSL Trends (mm/yr)"];
                     layer.bindPopup(`<h5>${name}</h5>
-                        <p class="msl">${msl} mm rise in MSL per year</p>
+                        <p class="msl">${msl} mm rise in MSL yearly</p>
                     `)
                     // layer.bindPopup(feature.properties.toString());
                 }
             }).addTo(map);
             
-            console.log(map);
         });
         
     }

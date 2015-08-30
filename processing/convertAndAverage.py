@@ -39,7 +39,7 @@ if __name__ == "__main__":
         # fixYr = 
         zosgaData.append({
             "yr": yr,
-            "Global Mean Sea Level Change (mm)": summ * 100.0
+            "Projected Global Average Sea Level Change (mm)": summ * 100.0
         })
         # zosgaData[yr] = cZosga[yr]["sum"] / cZosga[yr]["ct"]
 

@@ -3,3 +3,52 @@
     height: 600px;
     width: 100%;
 }
+
+.margin-bottom {
+    margin-bottom: 140px;
+}
+
+.margin-top {
+    margin-top: 140px;
+}
+
+#about {
+    margin-right: 12px;
+}
+
+#header {
+    margin-bottom: 20px;
+}
+
+#mmDisplay {
+    background-color: #40a4df;
+    display: inline-block;
+    height: 65mm;
+    width: 20mm;
+    text-align: center;
+    z-index: -111;
+}
+
+#infoP {
+    z-index:3;
+}
+
+.graphInfoRow {
+    min-height: 420px;
+}
+
+.hidden {
+    display: none;
+}
+
+.tableRow {
+    padding-top: 30px;
+}
+
+.transition {
+    margin-top: 30px;
+}
+
+#tableRow {
+    min-height: 600px;
+}
