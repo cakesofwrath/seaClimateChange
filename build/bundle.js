@@ -20524,7 +20524,7 @@
 	                    { id: "infoP" },
 	                    "That might not look like a lot, but even slight inreases can lead to huge consequences"
 	                ),
-	                _react2["default"].createElement("a", { id: "transitionOne", className: "button large icon arrow-right transition", onClick: this._onTransition })
+	                _react2["default"].createElement("a", { id: "transitionOne", className: "button large icon arrow-down transition", onClick: this._onTransition })
 	            ),
 	            status: 0
 	        };
@@ -20650,7 +20650,7 @@
 	                                            "."
 	                                        ),
 	                                        " ",
-	                                        _react2["default"].createElement("a", { id: "transitionTwo", className: "button large icon arrow-right transition", onClick: _this2._onTransition })
+	                                        _react2["default"].createElement("a", { id: "transitionTwo", className: "button large icon arrow-down transition", onClick: _this2._onTransition })
 	                                    )
 	                                });
 	                                $("#graphInfo").fadeIn(700);
@@ -20687,7 +20687,7 @@
 	        key: "render",
 	        value: function render() {
 	            // "<Chart id="slGraph" data={this.state.data} />"
-	            console.log("render", this.state);
+	            // console.log("render", this.state);
 	            if (this.state) return _react2["default"].createElement(
 	                "div",
 	                null,
@@ -20710,13 +20710,13 @@
 	                            "nav",
 	                            { className: "column_6 text right bold" },
 	                            _react2["default"].createElement(
-	                                "a",
-	                                { href: "#", id: "about" },
+	                                "button",
+	                                { "data-tuktuk-modal": "default_modal", id: "about" },
 	                                "About"
 	                            ),
 	                            _react2["default"].createElement(
 	                                "a",
-	                                { href: "#", className: "button small bck" },
+	                                { href: "https://github.com/cakesofwrath/seaClimateChange", className: "button small bck" },
 	                                "Github"
 	                            )
 	                        )
@@ -20749,7 +20749,7 @@
 	                            "Coastal Cities at Risk"
 	                        ),
 	                        _react2["default"].createElement(Table, { data: this.state.data && this.state.data["table"] ? this.state.data["table"] : null }),
-	                        _react2["default"].createElement("a", { id: "transitionThree", className: "button large icon arrow-right hidden transition", onClick: this._onTransition })
+	                        _react2["default"].createElement("a", { id: "transitionThree", className: "button large icon arrow-down hidden transition", onClick: this._onTransition })
 	                    )
 	                ),
 	                _react2["default"].createElement(
@@ -20763,7 +20763,7 @@
 	                ),
 	                _react2["default"].createElement(
 	                    "div",
-	                    { className: "row margin-bottom mapInfo", id: "mapInfo" },
+	                    { className: "row mapInfo", id: "mapInfo" },
 	                    _react2["default"].createElement(
 	                        "div",
 	                        { className: "column_8 offset_2 radius bck color text center" },
@@ -20782,8 +20782,144 @@
 	                                "NOAA data"
 	                            ),
 	                            ") are plotted - larger circles correlate to a greater rise in sea level. Many of the largest circles you see may be underwater in a few decades.",
-	                            _react2["default"].createElement("br", null),
-	                            _react2["default"].createElement("a", { id: "transitionThree", className: "button large icon arrow-up transition", onClick: this._onTransition })
+	                            _react2["default"].createElement("br", null)
+	                        )
+	                    )
+	                ),
+	                _react2["default"].createElement(
+	                    "div",
+	                    { className: "row whatMeDo", id: "whatMeDo" },
+	                    _react2["default"].createElement(
+	                        "h3",
+	                        null,
+	                        "So what can I do about climate change?"
+	                    ),
+	                    _react2["default"].createElement(
+	                        "div",
+	                        { className: "column_6" },
+	                        _react2["default"].createElement(
+	                            "h5",
+	                            null,
+	                            "Learn and Educate"
+	                        ),
+	                        _react2["default"].createElement(
+	                            "ul",
+	                            null,
+	                            _react2["default"].createElement(
+	                                "li",
+	                                null,
+	                                "Do some ",
+	                                _react2["default"].createElement(
+	                                    "a",
+	                                    { href: "http://lmgtfy.com/?q=Global+Warming" },
+	                                    "research."
+	                                )
+	                            ),
+	                            _react2["default"].createElement(
+	                                "li",
+	                                null,
+	                                "Learn your ",
+	                                _react2["default"].createElement(
+	                                    "a",
+	                                    { href: "http://www.nature.org/greenliving/carboncalculator/" },
+	                                    "carbon footprint."
+	                                )
+	                            ),
+	                            _react2["default"].createElement(
+	                                "li",
+	                                null,
+	                                "Know why climate change happens, and why the fact that it's snowing today has nothing to do with the climate."
+	                            ),
+	                            _react2["default"].createElement(
+	                                "li",
+	                                null,
+	                                "Teach your friends. And trust in the power of scientific consensus."
+	                            )
+	                        )
+	                    ),
+	                    _react2["default"].createElement(
+	                        "div",
+	                        { className: "column_6" },
+	                        _react2["default"].createElement(
+	                            "h5",
+	                            null,
+	                            "Act and Advocate"
+	                        ),
+	                        _react2["default"].createElement(
+	                            "ul",
+	                            null,
+	                            _react2["default"].createElement(
+	                                "li",
+	                                null,
+	                                "Contact your local Congressman/woman and Senator and ask for their position on climate change and what should bd done about it."
+	                            ),
+	                            _react2["default"].createElement(
+	                                "li",
+	                                null,
+	                                "Consider installing solar panels on your roof, or getting a powerful, yet stylish electric car, like the all new 2016 Nissan Volt."
+	                            ),
+	                            _react2["default"].createElement(
+	                                "li",
+	                                null,
+	                                "Don't let any elected official do this: ",
+	                                _react2["default"].createElement("img", { src: "https://38.media.tumblr.com/d79285f10e58985aa265d4ce61dea092/tumblr_nkfqkgRWJr1qfvu36o1_500.gif" })
+	                            )
+	                        )
+	                    )
+	                ),
+	                _react2["default"].createElement(
+	                    "center",
+	                    null,
+	                    _react2["default"].createElement("a", { id: "transitionThree", className: "button large icon arrow-up transition", onClick: this._onTransition })
+	                ),
+	                _react2["default"].createElement(
+	                    "div",
+	                    { id: "default_modal", "data-tuktuk": "modal", className: "column_5" },
+	                    _react2["default"].createElement(
+	                        "header",
+	                        null,
+	                        _react2["default"].createElement(
+	                            "h4",
+	                            { className: "text thin" },
+	                            "About"
+	                        )
+	                    ),
+	                    _react2["default"].createElement(
+	                        "article",
+	                        null,
+	                        "The first two datasets are, respectively, from the",
+	                        _react2["default"].createElement(
+	                            "a",
+	                            { href: "http://climate.nasa.gov/system/internal_resources/details/original/121_Global_Sea_Level_Data_File.txt" },
+	                            "NASA Goddard Space Flight Center's MEaSUREs program"
+	                        ),
+	                        _react2["default"].createElement(
+	                            "a",
+	                            { href: "http://cmip-pcmdi.llnl.gov/cmip5/data_description.html" },
+	                            "and the CMIP5 models from the WCRP"
+	                        ),
+	                        ". The cities data is from NASA satellite image estimation and *cough* Google and the pie chart sources are listed in the source code. Finally, the sea level trend data is from ",
+	                        _react2["default"].createElement(
+	                            "a",
+	                            { href: "http://tidesandcurrents.noaa.gov/sltrends/sltrends.html" },
+	                            "NOAA's Center for Operational Oceanographic Products and Services."
+	                        ),
+	                        "Check out the ",
+	                        _react2["default"].createElement(
+	                            "a",
+	                            { href: "https://github.com/cakesofwrath/seaClimateChange" },
+	                            "code here"
+	                        ),
+	                        "."
+	                    ),
+	                    _react2["default"].createElement(
+	                        "footer",
+	                        null,
+	                        _react2["default"].createElement(
+	                            "button",
+	                            { "data-modal": "close", className: "anchor" },
+	                            _react2["default"].createElement("span", { className: "icon remove" }),
+	                            "Close"
 	                        )
 	                    )
 	                )
