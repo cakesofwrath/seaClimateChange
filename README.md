@@ -13,3 +13,4 @@ Written with/using:
 + webpack + babel
 + leaflet.js
 + caffeine
++ python pandas for data processing
