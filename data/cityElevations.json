@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Miami, FL",
+        "elevation": 1.8,
+        "population": 417650
+    } ,
+    {
+        "name": "Venice, Italy",
+        "elevation": 1.0,
+        "population": 260060
+    },
+    {
+        "name": "New York City, NY",
+        "elevation": 10,
+        "population": 8491079
+    },
+    {
+        "name": "Mumbai, India",
+        "elevation": 14,
+        "population": 12478447
+    },
+    {
+        "name": "Singapore",
+        "elevation": 15,
+        "population": 5400000
+    },
+    {
+        "name": "New Orleans, LA",
+        "elevation": 0.5,
+        "population": 378715
+    },
+    {
+        "name": "Dhaka, Bangladesh",
+        "elevation": 17,
+        "population": 14400000
+    },
+    {
+        "name": "Guangzhou, China",
+        "elevation": 21,
+        "population": 11264800
+    },
+    {
+        "name": "Guayaquil, Ecuador",
+        "elevation": 4,
+        "population": 3500000
+    }
+]

@@ -11,6 +11,19 @@ let range = (start, end) => {
     return toRet;
 }
 
+let leapYear = (year) => {
+    return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+};
+
+let convertDecimalDate = (decimalDate) => {
+    var year = parseInt(decimalDate);
+    var reminder = decimalDate - year;
+    var daysPerYear = leapYear(year) ? 366 : 365;
+    var miliseconds = reminder * daysPerYear * 24 * 60 * 60 * 1000;
+    var yearDate = new Date(year, 0, 1);
+    return new Date(yearDate.getTime() + miliseconds);
+};
+
 class App extends React.Component {
     constructor(props) {
         // stuff
@@ -23,13 +36,17 @@ class App extends React.Component {
         }
         $.getJSON("data/gmsl.json", (data) => {
             gmsl = {
-                bindto: "#seaChart",
+                bindto: "#gmsl",
                 data: {
                     json: data,
                     keys: {
                         x: "yr",
-                        value: ["Sea Level Change (mm)"]
+                        value: ["Global Mean Sea Level Change (mm)"]
                     },
+                    type: "area-spline"
+                },
+                color: {
+                    pattern: ["#6699FF"]
                 },
                 axis: {
                     x: {
@@ -37,17 +54,31 @@ class App extends React.Component {
                             values: range(1993, 2017)
                         }
                     }
+                },
+                tooltip: {
+                    format: {
+                        title(d) {
+                            let date = convertDecimalDate(d);
+                            return (date.getMonth() + 1) + "/" +
+                                date.getDate() + "/" + 
+                                date.getFullYear();
+                        }
+                    }
                 }
             };
-            $.getJSON("data/zosgaSummed.json", (data) => {
+            $.getJSON("data/zosga.json", (data) => {
                 zosga = {
-                    bindto: "#seaChart",
+                    bindto: "#zosga",
                     data: {
                         json: data,
                         keys: {
                             x: "yr",
-                            value: ["zosgaSummed"]
-                        }
+                            value: ["Global Mean Sea Level Change (mm)"]
+                        },
+
+                    },
+                    color: {
+                        pattern: ["#6699FF"]
                     }
                 };
                 this.setState({
@@ -65,14 +96,19 @@ class App extends React.Component {
         console.log(this.state);
         return (
             <div>
-                <div className="row margin-bottom graph">
+                <div className="row graph">
                     <div className="column_12">
-                        <Chart id="slGraph" type={this.state.graphType} data={this.state.data ? this.state.data[this.state.graphType] : null} />
+                        <Chart id="gmsl" type="gmsl" data={this.state.data ? this.state.data["gmsl"] : null} />
+                    </div>
+                </div>
+                <div className="row graph">
+                    <div className="column_12">
+                        <Chart id="zosga" type="zosga" data={this.state.data ? this.state.data["zosga"] : null} />
                     </div>
                 </div>
                 <div className="row map">
                     <div className="column_12">
-                        <Map id="map" />
+                        <Map />
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import pandas as pd
 import json
 import pprint
+from datetime import datetime, timedelta
 
 if __name__ == "__main__":
     # with open("../data/gmsl.txt", "r") as raw:
@@ -13,9 +14,17 @@ if __name__ == "__main__":
     finalData = []
     for row in data.values:
         r = list(row)
+        start = float(r[0])
+        year = int(start)
+        rem = start - year
+
+        base = datetime(year, 1, 1)
+        result = base + timedelta(seconds=(base.replace(year=base.year + 1) - base).total_seconds() * rem)
+        # print result, str(result)
         finalData.append({
             "yr": r[0],
-            "Sea Level Change (mm)": r[1]            
+            "date": result.strftime("%Y-%m-%d"),
+            "Global Mean Sea Level Change (mm)": r[1]            
         })
 
     # pprint.pprint(finalData)

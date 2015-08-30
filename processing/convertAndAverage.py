@@ -2,6 +2,7 @@ import pandas as pd
 import json
 import pprint
 
+
 if __name__ == "__main__":
     with open("../data/zosgaRaw.json", "r") as zF:
         zosgaRaw = json.load(zF)
@@ -33,10 +34,12 @@ if __name__ == "__main__":
     zosgaData = []
     summ = 0.0
     for yr in cZosga:
-        summ += cZosga[yr]["sum"] / cZosga[yr]["ct"]
+        summ = cZosga[yr]["sum"] / cZosga[yr]["ct"]
+        
+        # fixYr = 
         zosgaData.append({
             "yr": yr,
-            "zosgaSummed": summ
+            "Global Mean Sea Level Change (mm)": summ * 100.0
         })
         # zosgaData[yr] = cZosga[yr]["sum"] / cZosga[yr]["ct"]
 

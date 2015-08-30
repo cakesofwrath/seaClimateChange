@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "c3": "^0.4.11-rc4",
+    "leaflet": "^1.0.0-beta.1",
     "react": "^0.13.3"
   }
 }
