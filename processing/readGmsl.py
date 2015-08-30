@@ -12,7 +12,11 @@ if __name__ == "__main__":
 
     finalData = []
     for row in data.values:
-        finalData.append(list(row))
+        r = list(row)
+        finalData.append({
+            "yr": r[0],
+            "Sea Level Change (mm)": r[1]            
+        })
 
     # pprint.pprint(finalData)
 

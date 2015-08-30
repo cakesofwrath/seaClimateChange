@@ -3,7 +3,7 @@ import json
 import pprint
 
 if __name__ == "__main__":
-    with open("../data/zosga.json", "r") as zF:
+    with open("../data/zosgaRaw.json", "r") as zF:
         zosgaRaw = json.load(zF)
         # pprint.pprint(zosga)
 
@@ -30,11 +30,17 @@ if __name__ == "__main__":
         cZosga[time]["ct"] += 1
 
     # zosgaData = { yr: for (yr, value) in cZosga }
-    zosgaData = {}
+    zosgaData = []
+    summ = 0.0
     for yr in cZosga:
-        zosgaData[yr] = cZosga[yr]["sum"] / cZosga[yr]["ct"]
+        summ += cZosga[yr]["sum"] / cZosga[yr]["ct"]
+        zosgaData.append({
+            "yr": yr,
+            "zosgaSummed": summ
+        })
+        # zosgaData[yr] = cZosga[yr]["sum"] / cZosga[yr]["ct"]
 
-    pprint.pprint(zosgaData)    
-
+    # pprint.pprint(zosgaData)    
+    print json.dumps(zosgaData)
     # print len(zosgaRaw["time"]), len(zosgaRaw["zosga"]) # the same
 

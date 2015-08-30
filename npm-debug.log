@@ -1,0 +1,64 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'c3', '--save' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 warn package.json @ No description
+5 warn package.json @ No repository field.
+6 warn package.json @ No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'c3', null ]
+9 verbose cache add name=undefined spec="c3" args=["c3",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'c3',
+10 verbose parsed url   path: 'c3',
+10 verbose parsed url   href: 'c3' }
+11 silly lockFile a625406f-c3 c3
+12 verbose lock c3 /Users/admin/.npm/a625406f-c3.lock
+13 silly lockFile a625406f-c3 c3
+14 silly lockFile a625406f-c3 c3
+15 verbose addNamed [ 'c3', '' ]
+16 verbose addNamed [ null, '*' ]
+17 silly lockFile f2919e7d-c3 c3@
+18 verbose lock c3@ /Users/admin/.npm/f2919e7d-c3.lock
+19 silly addNameRange { name: 'c3', range: '*', hasData: false }
+20 verbose request where is /c3
+21 verbose request registry https://registry.npmjs.org/
+22 verbose request id 544db851fccbd5ad
+23 verbose url raw /c3
+24 verbose url resolving [ 'https://registry.npmjs.org/', './c3' ]
+25 verbose url resolved https://registry.npmjs.org/c3
+26 verbose request where is https://registry.npmjs.org/c3
+27 info trying registry request attempt 1 at 19:56:43
+28 http GET https://registry.npmjs.org/c3
+29 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+30 info trying registry request attempt 2 at 19:56:53
+31 http GET https://registry.npmjs.org/c3
+32 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+33 info trying registry request attempt 3 at 19:57:53
+34 http GET https://registry.npmjs.org/c3
+35 silly lockFile f2919e7d-c3 c3@
+36 silly lockFile f2919e7d-c3 c3@
+37 error network getaddrinfo ENOTFOUND
+37 error network This is most likely not a problem with npm itself
+37 error network and is related to network connectivity.
+37 error network In most cases you are behind a proxy or have bad network settings.
+37 error network
+37 error network If you are behind a proxy, please make sure that the
+37 error network 'proxy' config is set properly.  See: 'npm help config'
+38 error System Darwin 14.0.0
+39 error command "node" "/usr/local/bin/npm" "install" "c3" "--save"
+40 error cwd /Users/admin/code/spaceapps
+41 error node -v v0.10.32
+42 error npm -v 1.4.28
+43 error syscall getaddrinfo
+44 error code ENOTFOUND
+45 error errno ENOTFOUND
+46 verbose exit [ 1, true ]
